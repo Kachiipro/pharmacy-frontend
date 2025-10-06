@@ -39,7 +39,7 @@ export default function AdminProductsPage() {
   // --- Layout / UI state ---
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
-  const [mode, setMode] = useState<"add" | "update">("add");
+  const [mode, setMode] = useState<"add" | "edit">("add");
   const [editProduct, setEditProduct] = useState<Product | null>(null);
 
   // --- Data state ---
@@ -228,7 +228,7 @@ export default function AdminProductsPage() {
   };
 
   const openEdit = (p: Product) => {
-    setMode("update");
+    setMode("edit");
     setEditProduct(p);
     if (isMobile) {
       router.push(`/admin/products/update/${p.id}`);
@@ -242,7 +242,7 @@ export default function AdminProductsPage() {
     try {
       if (mode === "add") {
         await optimisticCreate(data);
-      } else if (mode === "update" && editProduct) {
+      } else if (mode === "edit" && editProduct) {
         await optimisticUpdate(editProduct.id, data);
       }
       setModalOpen(false);
