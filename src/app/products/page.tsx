@@ -8,10 +8,12 @@ import Sidebar from "../components/Sidebar";
 // helper for headers
 export function authHeaders(): HeadersInit {
   const token = localStorage.getItem("accessToken");
-  return {
-    "Content-Type": token ? "application/json" : "",
-    Authorization: token ? `Bearer ${token}` : "",
-  } as Record<string, string>;
+  const headers: Record<string, string> = {};
+
+  if (token) headers["Authorization"] = `Bearer ${token}`;
+  headers["Content-Type"] = "application/json";
+
+  return headers;
 }
 
 export default function ProductsPage() {
