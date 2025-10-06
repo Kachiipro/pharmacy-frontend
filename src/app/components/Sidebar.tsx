@@ -14,8 +14,12 @@ import {
   Shield,
 } from "lucide-react";
 import { isSuperUser } from "@/lib/auth";
+interface SidebarProps {
+  sidebarOpen: boolean;
+  setSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-export default function Sidebar() {
+export default function Sidebar({ sidebarOpen, setSidebarOpen }: SidebarProps) {
   const router = useRouter();
   const [collapsed, setCollapsed] = useState(false);
   const [superUser, setSuperUser] = useState(false);
