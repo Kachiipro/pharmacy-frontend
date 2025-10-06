@@ -6,13 +6,12 @@ import { Menu, Search, ChevronDown, ChevronUp } from "lucide-react";
 import Sidebar from "../components/Sidebar";
 
 // helper for headers
-function authHeaders() {
+export function authHeaders(): HeadersInit {
   const token = localStorage.getItem("accessToken");
-  if (!token) return {};
   return {
-    "Content-Type": "application/json",
-    Authorization: `Bearer ${token}`,
-  };
+    "Content-Type": token ? "application/json" : "",
+    Authorization: token ? `Bearer ${token}` : "",
+  } as Record<string, string>;
 }
 
 export default function ProductsPage() {
