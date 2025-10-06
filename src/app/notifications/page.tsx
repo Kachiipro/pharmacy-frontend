@@ -11,6 +11,7 @@ import {
 import { Trash2, CheckCircle, Circle } from "lucide-react";
 
 export default function NotificationPage() {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [notifications, setNotifications] = useState<Notification[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -44,7 +45,7 @@ export default function NotificationPage() {
   const handleDelete = async (productId: number) => {
   if (!confirm("Delete this notification?")) return;
   const prev = notifications;
-  setNotifications((prev) => prev.filter((n) => n.product_id !== productId));
+  setNotifications((prev) => prev.filter((n) => n.id !== productId));
   try {
     await deleteNotification(productId);
   } catch (err) {
@@ -56,7 +57,7 @@ export default function NotificationPage() {
 
   return (
     <main className="flex min-h-screen bg-gray-100">
-      <Sidebar />
+        const [sidebarOpen, setSidebarOpen] = useState(false);
 
       <div className="flex-1 p-4 md:p-6">
         <h2 className="text-xl font-bold mb-4">Notifications</h2>
@@ -97,7 +98,7 @@ export default function NotificationPage() {
                   )}
                 </button>
                 <button
-                  onClick={() => handleDelete(n.product_id)}
+                  onClick={() => handleDelete(n.id)}
                   className="p-2 rounded hover:bg-red-100 text-red-600"
                 >
                   <Trash2 size={18} />
