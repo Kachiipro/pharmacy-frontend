@@ -38,7 +38,13 @@ export default function DashboardPage() {
   }, [router]);
 
   async function fetchDashboardData(token: string) {
-    
+    try {
+      const res = await fetch(`${API_URL}/dashboard-stats/`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      });
 
       if (res.status === 401) {
         console.warn("Unauthorized → redirecting to login");
@@ -46,13 +52,6 @@ export default function DashboardPage() {
         router.replace("/login");
         return;
       }
-      try {
-      const res = await fetch(`${API_URL}/dashboard-stats/`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-      });
 
       if (!res.ok) throw new Error("Failed to fetch dashboard stats");
 

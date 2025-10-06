@@ -54,7 +54,7 @@ export default function LoginPage() {
       localStorage.setItem("email", decoded.email || "");
       localStorage.setItem("is_superuser", decoded.is_superuser ? "true" : "false");
 
-      router.push("/products");
+      router.push("/dashboard");
     } catch (err: any) {
       setError(err.message || "Something went wrong");
     } finally {
