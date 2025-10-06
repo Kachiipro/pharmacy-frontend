@@ -27,7 +27,7 @@ export default function LoginPage() {
     setError("");
 
     try {
-      const response = await fetch("http://johncast.pythonanywhere.com/api/v1/token/", {
+      const response = await fetch("https://johncast.pythonanywhere.com/api/v1/token/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }), // assuming your serializer accepts email+password
