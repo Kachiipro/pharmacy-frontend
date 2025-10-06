@@ -289,7 +289,7 @@ export default function AdminProductsPage() {
 
   // --- Main UI (superuser only) ---
   return (
-    <main className="flex min-h-screen bg-gray-100">
+    <main className="flex min-h-screen ">
       <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
       <div className="flex-1 p-4 md:p-6">
@@ -303,9 +303,9 @@ export default function AdminProductsPage() {
         {/* Mobile Top Bar */}
         <div className="flex items-center justify-between md:hidden mb-4">
           <h2 className="text-lg font-bold text-gray-800">Admin - Products</h2>
-          <button onClick={() => setSidebarOpen(true)} className="p-2 rounded-md hover:bg-gray-200">
+          {/* <button onClick={() => setSidebarOpen(true)} className="p-2 rounded-md hover:bg-gray-200">
             <Menu size={22} />
-          </button>
+          </button> */}
         </div>
 
         {/* Header (search + add) */}

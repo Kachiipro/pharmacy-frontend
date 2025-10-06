@@ -56,7 +56,7 @@ export default function UpdateProductPage() {
   const handleUpdate = async (data: any) => {
     try {
       const token = localStorage.getItem("accessToken");
-      const res = await fetch(`http://127.0.0.1:8000/api/v1/goods/${id}/`, {
+      const res = await fetch(`https://johncast.pythonanywhere.com/api/v1/goods/${id}/`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

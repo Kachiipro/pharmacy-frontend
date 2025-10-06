@@ -27,7 +27,7 @@ export default function AddProductPage() {
       const token = localStorage.getItem("accessToken");
       if (!token) throw new Error("No token found");
 
-      const res = await fetch("http://127.0.0.1:8000/api/v1/goods/", {
+      const res = await fetch("https://johncast.pythonanywhere.com/api/v1/goods/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

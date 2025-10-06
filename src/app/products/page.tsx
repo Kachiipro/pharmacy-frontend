@@ -45,7 +45,14 @@ export default function ProductsPage() {
         if (!res.ok) throw new Error(`Failed to fetch products (${res.status})`);
         const data = await res.json();
         setProducts(Array.isArray(data) ? data : data.results || []);
-      } catch (err) {
+      } catch (err: any) {
+        if (err.message?.includes("401") || err.message?.includes("Unauthorized")) {
+          localStorage.removeItem("accessToken");
+          localStorage.removeItem("is_superuser");
+          // Optionally, show a message to the user here
+          router.replace("/login");
+          return;
+        }
         console.error("❌ Product fetch failed:", err);
       } finally {
         setLoading(false);
