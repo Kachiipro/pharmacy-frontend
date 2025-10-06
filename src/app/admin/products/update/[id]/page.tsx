@@ -29,7 +29,7 @@ export default function UpdateProductPage() {
 
     async function fetchProduct() {
       try {
-        const res = await fetch(`http://127.0.0.1:8000/api/v1/goods/${id}/`, {
+        const res = await fetch(`https://johncast.pythonanywhere.com/api/v1/goods/${id}/`, {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
