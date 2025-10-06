@@ -34,7 +34,7 @@ export default function LoginPage() {
       });
 
       if (!response.ok) {
-        throw new Error("Invalid credentials");
+        throw new Error("Email or Password incorrect");
       }
 
       const data = await response.json();
