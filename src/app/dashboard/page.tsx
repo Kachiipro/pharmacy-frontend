@@ -29,7 +29,7 @@ export default function DashboardPage() {
     const token = localStorage.getItem("accessToken");
 
     if (!token) {
-      router.replace("/login"); // redirect if no token
+      router.push("/login"); // redirect if no token
       return;
     }
 
@@ -40,12 +40,12 @@ export default function DashboardPage() {
   async function fetchDashboardData(token: string) {
     
 
-      // if (res.status === 401) {
-      //   console.warn("Unauthorized → redirecting to login");
-      //   localStorage.removeItem("accessToken"); // clear invalid token
-      //   router.replace("/login");
-      //   return;
-      // }
+      if (res.status === 401) {
+        console.warn("Unauthorized → redirecting to login");
+        localStorage.removeItem("accessToken"); // clear invalid token
+        router.replace("/login");
+        return;
+      }
       try {
       const res = await fetch(`${API_URL}/dashboard-stats/`, {
         headers: {
