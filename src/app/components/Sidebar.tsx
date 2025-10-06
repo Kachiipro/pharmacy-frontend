@@ -35,7 +35,7 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }: SidebarProps) {
   };
 
   const navLinks = [
-    { name: "Dashboard", href: "/dashboard", icon: Home },
+    { name: "Dashboard", href: "/products", icon: Home },
     { name: "Products", href: "/products", icon: Box },
     { name: "Categories", href: "/categories", icon: Layers },
     { name: "Notifications", href: "/notifications", icon: Bell },
