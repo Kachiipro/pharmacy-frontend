@@ -57,7 +57,7 @@ export default function NotificationPage() {
 
   return (
     <main className="flex min-h-screen bg-gray-100">
-        const [sidebarOpen, setSidebarOpen] = useState(false);
+      <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
       <div className="flex-1 p-4 md:p-6">
         <h2 className="text-xl font-bold mb-4">Notifications</h2>
