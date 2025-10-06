@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { Menu, Box, Layers, Users, Bell } from "lucide-react";
 import Sidebar from "../components/Sidebar";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000/api";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://johncast.pythonanywhere.com/api";
 
 interface Stats {
   products: number;

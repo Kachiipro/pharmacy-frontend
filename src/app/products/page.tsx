@@ -38,7 +38,7 @@ export default function ProductsPage() {
     // Fetch products from API
     const fetchProducts = async () => {
       try {
-        const res = await fetch("http://johncast.pythonanywhere.com/api/v1/goods/", {
+        const res = await fetch("https://johncast.pythonanywhere.com/api/v1/goods/", {
           method: "GET",
           headers: authHeaders(),
         });
