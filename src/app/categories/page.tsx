@@ -15,7 +15,7 @@ interface Category {
 
 export default function CategoryPage() {
   const router = useRouter();
-
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -147,7 +147,7 @@ export default function CategoryPage() {
 
   return (
     <main className="flex min-h-screen bg-gray-100">
-      <Sidebar />
+      <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
       <div className="flex-1 p-4 md:p-6">
         <div className="flex justify-between items-center mb-6">
