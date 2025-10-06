@@ -73,6 +73,7 @@ export default function DashboardPage() {
 
   return (
     <main className="flex min-h-screen bg-gray-100">
+      <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
       <div className="flex-1 p-4 md:p-6">
         {/* Mobile Header */}
