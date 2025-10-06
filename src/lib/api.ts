@@ -47,7 +47,7 @@ export async function refreshAccessToken() {
   const refresh = localStorage.getItem("refreshToken");
   if (!refresh) throw new Error("No refresh token");
 
-  const response = await fetch("http://johncast.pythonanywhere.com/api/v1/token/refresh/", {
+  const response = await fetch("https://johncast.pythonanywhere.com/api/v1/token/refresh/", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ refresh }),
@@ -83,7 +83,7 @@ export function authHeaders() {
   };
 }
 
-export const API_BASE = "http://johncast.pythonanywhere.com/api";
+export const API_BASE = "https://johncast.pythonanywhere.com/api";
 
 
 
