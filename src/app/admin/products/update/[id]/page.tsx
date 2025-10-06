@@ -89,7 +89,7 @@ export default function UpdateProductPage() {
     <div className="p-4 md:p-6">
       <ProductForm
         initialData={product}
-        mode="update"
+        mode="edit"
         onSubmit={handleUpdate}
       />
     </div>
